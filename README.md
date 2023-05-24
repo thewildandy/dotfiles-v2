@@ -8,6 +8,7 @@ If setting up a fresh machine, make sure to first:
 - install NeoVim 0.9.0
 - install NvChad
 - install git
+- install tmux and tpm (don't forget to tpm install after changing configs (tmux prefix + I))
 - clone this repo to your home directory
 
 Then, run stow:
@@ -37,3 +38,8 @@ This is only required for the host machine, it's not necessary to set up on remo
 ### Setup Alacritty theme
 I use catppuccin for the terminal, nvim, and anything else I can.
 Go to https://github.com/catppuccin/alacritty and follow the steps, including the part in the FAQs about colors in tmux.
+
+### Troubleshooting / more notes to integrate
+- stow isn't working out so well. Will rethink this, using symlinks for now, i.e. install NvChad first, then link nvim custom configs, tmux, alacritty.
+- to get Tmux bottom bar customisations running you need to ask TPM to install our addons after changing config. You do this with `<prefix> I`, i.e. `<C-Spc> I`
+
