@@ -1,0 +1,16 @@
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+
+env:
+  TERM: xterm-256color
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+      #    family: Hack Nerd Font
+    style: Light 
+
+  size: 12.0
+  offset:
+    x: 0  # letter spacing
+#    y: 6  # line spacing (only for Hack font, JetBrains already has some padding)
