@@ -7,3 +7,7 @@ vim.opt.colorcolumn = "80"
 vim.api.nvim_exec([[
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 ]], false)
+
+vim.api.nvim_exec([[
+  autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+]], false)
