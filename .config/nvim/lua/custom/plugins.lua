@@ -4,15 +4,34 @@ local plugins = {
     lazy = false,
   },
   -- fix indentation for tsx files
+  { "pangloss/vim-javascript" }, -- syntax
   { "leafgarland/typescript-vim" }, -- dependency?
   { "peitalin/vim-jsx-typescript" }, -- fixes indents
-  -- manage databases in vim 
-  { "tpope/vim-dadbod", lazy = false },
+  -- manage databases in vim
+  -- configured carefully so as to play nicely with nvim-cmp
   {
     "kristijanhusak/vim-dadbod-ui",
-    -- requires = "tpope/vim-dadbod",
-    lazy = false,
+    cmd = "DBUI", -- load it when we call it
+    dependencies = {
+      "tpope/vim-dadbod",
+      -- note: lazy=false on completions will fuck with nvim-cmp
+      "kristijanhusak/vim-dadbod-completion",
+    }
   },
-  { "kristijanhusak/vim-dadbod-completion", lazy = false },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "typescript-language-server"
+      },
+    },
+  },
 }
 return plugins
