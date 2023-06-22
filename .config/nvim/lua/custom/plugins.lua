@@ -31,6 +31,7 @@ local plugins = {
       ensure_installed = {
         "typescript-language-server",
         "tailwindcss-language-server",
+        "rust-analyzer",
       },
     },
   },
